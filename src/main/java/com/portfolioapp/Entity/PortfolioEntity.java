@@ -1,10 +1,13 @@
 package com.portfolioapp.Entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
+@Data
 @Table(name = "portfolio", schema = "public", catalog = "postgres")
 public class PortfolioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,38 +23,6 @@ public class PortfolioEntity {
     @Basic
     @Column(name = "created_on")
     private Timestamp createdOn;
-
-    public int getPortfolioId() {
-        return portfolioId;
-    }
-
-    public void setPortfolioId(int portfolioId) {
-        this.portfolioId = portfolioId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public Timestamp getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Timestamp createdOn) {
-        this.createdOn = createdOn;
-    }
 
     @Override
     public boolean equals(Object o) {
